@@ -13,10 +13,10 @@
     $lat = $_GET['lat'];
     $long = $_GET['long'];
     $distance = $_GET['distance'] / 68.9722;
-    $latLower = $lat - $distance
-    $latLUpper = $lat + $distance
-    $longLower = $long - $distance
-    $longUpper = $long + $distance
+    $latLower = $lat - $distance;
+    $latLUpper = $lat + $distance;
+    $longLower = $long - $distance;
+    $longUpper = $long + $distance;
 
 
     $pdo = new PDO('mysql:host='.$db_host.';dbname='.$database, $username, $pwd);

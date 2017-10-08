@@ -26,7 +26,7 @@
             $echo("Database Login failed! Please make sure that the DB login credentials provided are correct");
             return false;
         }
-    $query1 = $pdo->prepare("INSERT INTO ".$usertablename." (EventName, Lat, Lon, Description, StartTime, EndTime, Category, Image, Address) VALUES ($name, $lat, $lon, $des, $start, $end, $category, $image, $address);");
+    $query1 = $pdo->prepare("INSERT INTO events (EventName, Lat, Lon, Description, StartTime, EndTime, Category, Image, Address) VALUES ($name, $lat, $lon, $des, $start, $end, $category, $image, $address);");
     //Execute query
     $query1->execute(array());
   }

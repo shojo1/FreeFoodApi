@@ -14,7 +14,7 @@
     $long = $_GET['long'];
     $distance = $_GET['distance'] / 68.9722;
     $latLower = $lat - $distance;
-    $latLUpper = $lat + $distance;
+    $latUpper = $lat + $distance;
     $longLower = $long - $distance;
     $longUpper = $long + $distance;
 
@@ -25,7 +25,7 @@
             $echo("Database Login failed! Please make sure that the DB login credentials provided are correct");
             return false;
         }
-    $query1 = $pdo->prepare("SELECT EventName, Lat, Lon, Description, StartTime, EndTime, Category, Image FROM ".$usertablename." WHERE Lat >= ".$latLower." AND Lat <= ".$latUppwer." AND Lon >= ".$longLower." AND Lon <= ".$longUpper);
+    $query1 = $pdo->prepare("SELECT EventName, Lat, Lon, Description, StartTime, EndTime, Category, Image FROM ".$usertablename." WHERE Lat >= ".$latLower." AND Lat <= ".$latUpper." AND Lon >= ".$longLower." AND Lon <= ".$longUpper);
     //Execute query
     $query1->execute(array());
 

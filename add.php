@@ -26,8 +26,9 @@
             $echo("Database Login failed! Please make sure that the DB login credentials provided are correct");
             return false;
         }
-    $query1 = $pdo->prepare("INSERT INTO events (EventName, Lat, Lon, Description, StartTime, EndTime, Category, Image, Address) VALUES ($name, $lat, $lon, $des, $start, $end, $category, $image, $address);");
+    $query1 = $pdo->prepare("INSERT INTO events (EventName, Lat, Lon, Description, StartTime, EndTime, Category, Image, Address) VALUES ($name, $lat, $lon, $des, $start, $end, $category, $image, $address);SET @last_id_in_table1 = LAST_INSERT_ID();UPDATE events SET Hash=MD5(@last_id_in_table1+$name) WHERE idevents=@last_id_in_table1;");
     //Execute query
     $query1->execute(array());
+
   }
 ?>

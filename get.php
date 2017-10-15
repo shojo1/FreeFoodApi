@@ -83,10 +83,10 @@
        }
 
        if($filters > 0){
-         $query1 = $pdo->prepare("SELECT EventName, Lat, Lon, Description, StartTime, EndTime, Category, Image, Address FROM events WHERE Lat >= ".$latLower." AND Lat <= ".$latUpper." AND Lon >= ".$longLower." AND Lon <= ".$longUpper." AND (Category = ".$filterQuery. ")");
+         $query1 = $pdo->prepare("SELECT EventName, Lat, Lon, Description, StartTime, EndTime, Category, Image, Address, Hash FROM events WHERE Lat >= ".$latLower." AND Lat <= ".$latUpper." AND Lon >= ".$longLower." AND Lon <= ".$longUpper." AND (Category = ".$filterQuery. ")");
        }
        else{
-         $query1 = $pdo->prepare("SELECT EventName, Lat, Lon, Description, StartTime, EndTime, Category, Image, Address FROM events WHERE Lat >= ".$latLower." AND Lat <= ".$latUpper." AND Lon >= ".$longLower." AND Lon <= ".$longUpper);
+         $query1 = $pdo->prepare("SELECT EventName, Lat, Lon, Description, StartTime, EndTime, Category, Image, Address, Hash FROM events WHERE Lat >= ".$latLower." AND Lat <= ".$latUpper." AND Lon >= ".$longLower." AND Lon <= ".$longUpper);
        }
        //Execute query
        $query1->execute(array());
